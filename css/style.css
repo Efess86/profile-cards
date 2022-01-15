@@ -1,5 +1,5 @@
 body {
-	background-color: rgb(194, 194, 194);
+	background-color: rgb(54, 77, 155);
 }
 
 .wrapper {
@@ -10,6 +10,10 @@ body {
 	gap: 10px;
 }
 
+.form,
+.result {
+	background-color: rgb(194, 194, 194);
+}
 
 
 /* ================== FORM ========================== */
