@@ -93,7 +93,7 @@ body {
 .profile {
 	display: grid;
 	gap: 10px;
-	grid-template-columns: repeat(auto-fit, minmax(375px, 375px));
+	grid-template-columns: repeat(auto-fit, minmax(325px, 325px));
 	justify-content: center;
 	padding: 10px;
 }
@@ -101,7 +101,8 @@ body {
 /* --------------- Cards ------------------- */
 .card-body {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
+	justify-content: space-between;
 	gap: 5px;
 	width: 100%;
 	height: 100%;
@@ -111,19 +112,7 @@ body {
 	padding: 5px;
 	transition: .3s;
 	overflow: auto;
-}
-
-.card-body::-webkit-scrollbar {
-	height: 8px;
-}
-
-.card-body::-webkit-scrollbar-thumb {
-	background: #AFAFAF;
-	border-radius: 10px;
-}
-
-.card-body-span {
-	font: 400 15px Arial;
+	position: relative;
 }
 
 .card-body:hover {
@@ -132,6 +121,49 @@ body {
 	box-shadow: 5px 5px 8px 2px #000000;
 }
 
+.card-body-text {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	/* padding: 0 10px 0 0; */
+}
+
+.card-body-span {
+	display: block;
+	font: 400 15px Arial;
+	user-select: none;
+}
+
+
+/* Card nav ======================= */
+/* .card-body-nav {
+	margin: 2px 5px 0 0;
+	display: flex;
+	flex-direction: column;
+	gap: 9px;
+	justify-content: center;
+	align-items: center;
+} */
+
+.fas {
+	cursor: pointer;
+	transition: .3s;
+	position: absolute;
+}
+
+.fa-trash {
+	right: 13px;
+	top: 10px;
+}
+
+.fa-id-card {
+	right: 0px;
+	top: 45px;
+}
+
+.fas:hover {
+	color: rgb(255, 86, 86);
+}
 
 /* ============== @media ================= */
 
