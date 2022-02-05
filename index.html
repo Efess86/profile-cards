@@ -18,11 +18,13 @@
 			<h2 class="form-header">Enter profile information</h2>
 			<input type="text" class="input-name" placeholder="Name">
 			<input type="text" class="input-surname" placeholder="Surname">
-			<input type="text" class="input-email" placeholder="email">
+			<input type="text" pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*"
+				class="input-email" placeholder="Email" required>
 			<button class="btn">Add profile</button>
 			<button class="btn-delete">Delete last</button>
 			<button class="btn-deleteAll">Delete all</button>
 			<div class="card-body-nav-delete"></div>
+			<div class="error-output"></div>
 		</div>
 
 		<div class="result">

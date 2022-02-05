@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		inpName = document.querySelector('.input-name'),
 		inpSurname = document.querySelector('.input-surname'),
 		inpEmail = document.querySelector('.input-email'),
-		form = document.querySelector('.profile');
+		form = document.querySelector('.profile'),
+		errorOut = document.querySelector('.error-output');
 
 	// btn.addEventListener('click', () => {
 	// 	const div = document.createElement('div');
@@ -56,16 +57,27 @@ document.addEventListener('DOMContentLoaded', () => {
 			</div>`;
 
 		} else {
-			alert('Please fill all the fields');
+			errorOut.innerHTML = 'Error. Please fill all fields.';
+			setTimeout(() => {
+				errorOut.innerHTML = '';
+			}, 3500);
 		}
 
-		document.querySelectorAll('.trash').forEach((btn) => {
-			btn.addEventListener('click', () => {
-				btn.parentElement.remove();
-			});
-		});
+		// document.querySelectorAll('.trash').forEach((btn) => {   <<<<<<<<<<<<<<< OLD METHOD
+		// 	btn.addEventListener('click', () => {
+		// 		btn.parentElement.remove();
+		// 	});
+		// });
 
 	});
+
+	form.addEventListener('click', (e) => {
+		if (e.target && e.target.matches('.profile .card-body .trash')) {
+			e.target.parentElement.remove();
+		}
+
+	});
+
 
 	btnDelete.addEventListener('click', () => {
 		form.removeChild(form.lastChild);
