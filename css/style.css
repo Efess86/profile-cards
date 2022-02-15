@@ -1,5 +1,6 @@
 body {
 	background-color: rgb(54, 77, 155);
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .wrapper {
@@ -29,11 +30,13 @@ body {
 
 .form-header {
 	margin: 0 5px;
-	font: 600 15px Arial;
+	font: 600 15px Verdana, Geneva, Tahoma, sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	text-align: center;
+	user-select: none;
 }
+
 
 .input-name,
 .input-surname,
@@ -48,6 +51,7 @@ body {
 	border: 1px solid #000;
 	border-radius: 10px;
 	transition: .3s;
+	user-select: none;
 }
 
 .btn,
@@ -55,7 +59,11 @@ body {
 .btn-deleteAll {
 	letter-spacing: 1px;
 	text-transform: uppercase;
-	font: 600 14px Arial;
+	font: 600 14px Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.btn {
+	margin: 20px auto 0 auto;
 }
 
 .input-name:hover,
@@ -85,6 +93,7 @@ body {
 
 /* ========================= Result ======================== */
 .result {
+	position: relative;
 	border: 1px solid rgb(136, 136, 136);
 	border-radius: 10px;
 	height: 100%;
@@ -100,7 +109,7 @@ body {
 
 .error-output {
 	margin: 0px auto;
-	font: 400 18px Arial;
+	font: 400 18px Verdana, Geneva, Tahoma, sans-serif;
 	color: red;
 }
 
@@ -135,7 +144,7 @@ body {
 
 .card-body-span {
 	display: block;
-	font: 400 15px Arial;
+	font: 400 15px Verdana, Geneva, Tahoma, sans-serif;
 	user-select: none;
 }
 
@@ -152,6 +161,7 @@ body {
 
 .fas {
 	cursor: pointer;
+	user-select: none;
 	transition: .3s;
 	position: absolute;
 }
@@ -167,6 +177,65 @@ body {
 }
 
 .fas:hover {
+	color: rgb(255, 86, 86);
+}
+
+.profile-info {
+	top: 60px;
+	right: 13px;
+}
+
+
+/* =========== Modal =============== */
+
+.modal__profile {
+	position: fixed;
+	display: none;
+	flex-direction: column;
+	border: 1px solid #000;
+	background-color: #fff;
+	border-radius: 10px;
+	padding: 35px 40px 20px 15px;
+	gap: 10px;
+	top: 50%;
+	left: 50%;
+	transform: translate(0, -100%);
+}
+
+.active__modal {
+	display: flex;
+}
+
+.close__modal {
+	display: none;
+}
+
+.transform {
+	animation-name: transform;
+	animation-duration: .4s;
+}
+
+@keyframes transform {
+	from {
+		transform: translate(0, -350%);
+	}
+
+	to {
+		transform: translate(0, -100%);
+	}
+}
+
+.modal__close {
+	font-size: 25px;
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	cursor: pointer;
+	user-select: none;
+	transition: .3s;
+}
+
+.modal__close:hover {
 	color: rgb(255, 86, 86);
 }
 
