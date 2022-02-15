@@ -59,8 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
 					<span class="card-body-span card__surname">Surname: ${userSurname}</span>
 					<span class="card-body-span card__email">Email: ${userEmail}</span>
 				</div>
-				<i class="trash fas fa-trash fa-2x">trash</i>
-				<i class="profile-info fas fa-id-card fa-2x">profile</i>
+				<i class="trash fas fa-trash fa-2x"></i>
+				<i class="profile-info fas fa-id-card fa-2x"></i>
 			</div>`;
 
 		} else {
