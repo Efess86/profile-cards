@@ -10,7 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		form = document.querySelector('.profile'),
 		errorOut = document.querySelector('.error-output'),
 		modalProfile = document.querySelector('.modal__profile'),
+		modalUnder = document.querySelector('.modal__profile-under'),
 		result = document.querySelector('.result');
+
 
 	let userName,
 		userSurname,
@@ -59,8 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
 					<span class="card-body-span card__surname">Surname: ${userSurname}</span>
 					<span class="card-body-span card__email">Email: ${userEmail}</span>
 				</div>
-				<i class="trash fas fa-trash fa-2x"></i>
-				<i class="profile-info fas fa-id-card fa-2x"></i>
+				<i class="trash fas fa-trash fa-2x">AAAA</i>
+				<i class="profile-info fas fa-id-card fa-2x">AAAA</i>
 			</div>`;
 
 		} else {
@@ -97,17 +99,37 @@ document.addEventListener('DOMContentLoaded', () => {
 			modalProfile.classList.add('active__modal');
 			modalProfile.classList.add('transform');
 			modalProfile.classList.remove('close__modal');
+			modalUnder.classList.add('modal__profile-under-active');
+			document.body.style.overflow = 'hidden';
 
 			modalProfile.innerHTML = `<div class="modal__close">&times;</div> ${profText}`;
 		}
 	});
 
 	// modal close -------
-	result.addEventListener('click', (e) => {
+	function closeModal() {
+		modalProfile.classList.remove('active__modal');
+		modalProfile.classList.remove('transform');
+		modalProfile.classList.add('close__modal');
+		modalUnder.classList.remove('modal__profile-under-active');
+		document.body.style.overflow = '';
+	}
+
+	result.addEventListener('click', (e) => { // close by chest
 		if (e.target && e.target.matches('.result .modal__profile .modal__close')) {
-			modalProfile.classList.remove('active__modal');
-			modalProfile.classList.remove('transform');
-			modalProfile.classList.add('close__modal');
+			closeModal();
+		}
+	});
+
+	document.addEventListener('click', (e) => { // close by click out of modal
+		if (e.target === modalUnder) {
+			closeModal();
+		}
+	});
+
+	document.addEventListener('keydown', (e) => { // close by escape key
+		if (e.code === 'Escape' && modalProfile.classList.contains('active__modal')) {
+			closeModal();
 		}
 	});
 
