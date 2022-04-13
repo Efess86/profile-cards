@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// 	div.appendChild(userSurname);
 	// 	div.appendChild(userEmail);
 	// });
-
+// =============== Refactoring ================
 	btn.addEventListener('click', () => {
 		userName = inpName.value;
 		userSurname = inpSurname.value;
@@ -61,8 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
 					<span class="card-body-span card__surname">Surname: ${userSurname}</span>
 					<span class="card-body-span card__email">Email: ${userEmail}</span>
 				</div>
-				<i class="trash fas fa-trash fa-2x">AAAA</i>
-				<i class="profile-info fas fa-id-card fa-2x">AAAA</i>
+				<i class="trash fas fa-trash fa-2x"></i>
+				<i class="profile-info fas fa-id-card fa-2x"></i>
 			</div>`;
 
 		} else {
@@ -78,10 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	btnDeleteAll.addEventListener('click', () => {
-		// Почему код ниже работает? Ведь удаляется первый ребёнок.
-		// while (form.firstChild) {
-		// 	form.removeChild(form.firstChild);
-		// }
 		form.innerHTML = '';
 	});
 
